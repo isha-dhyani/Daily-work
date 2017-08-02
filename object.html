@@ -1,0 +1,97 @@
+
+<html>
+<script>
+    var arr = new Array();
+    var arr1 = new Array();
+    var obj = new Object();
+    obj.name = "isha";
+    obj.phone = "9911307700";
+    obj.email = "isha@apnlive.com";
+
+    var obj2 = new Object();
+    obj2.name = "isha2";
+    obj2.phone = "99113077";
+    obj2.email = "isha@apnlive.com2";
+
+    var obj3 = new Object();
+    obj3.name = "isha3";
+    obj3.phone = "991130";
+    obj3.email = "isha@apnlive.com3";
+    arr1.push(obj, obj2, obj3);
+    console.log(arr);
+
+    function newCons(name, phone, email) {
+        this.name = name;
+        this.phone= phone;
+        this.email= email;
+    }
+
+    var con = new newCons('Red','0987654', 'isha@apnlive.com ');
+    var con2 = new newCons('abc','345678','ahs@com');
+    var con3 = new newCons('kijhy','222222','jkjkj@com');
+    arr.push(con, con2, con3);
+    console.log(arr);
+
+    function add(){
+        var c= '', r='', n='';
+        for(var i=0; i<arr1.length ; i++){
+
+            c += "<input type='text' value= "+arr[i].name+" /></br></br>";
+
+        }
+        for(var j=0; j<arr1.length ; j++){
+
+            r += "<input type='radio' value="+arr[j].phone+"/>"+arr[j].phone;
+        }
+
+        for(var k=0; k<arr1.length ; k++){
+
+            n += "<input type='checkbox' value="+arr[k].email+" />"+arr[k].email;
+        }
+      document.getElementById("textbox").innerHTML = c;
+        document.getElementById("radio").innerHTML = r;
+        document.getElementById("check").innerHTML = n;
+
+    }
+/*
+    function add(text, radio, check){
+    this.text= "<input type='text' value= "+obj.name+" /></br></br>";
+    this.radio=  "<input type='radio' value="+obj.phone+"/>"+obj.phone;
+    this.check= "<input type='checkbox' value="+obj.email+" />"+obj.email;
+
+        document.getElementById("textbox").innerHTML = this.text;
+        document.getElementById("radio").innerHTML = this.radio;
+        document.getElementById("check").innerHTML = this.check;
+
+    }*/
+
+    function del(){
+
+       arr.pop();
+       add();
+       console.log(arr);
+
+    }
+
+</script>
+<body>
+<div id="textbox">
+    <p></p>
+
+</div>
+
+<div id="radio">
+    <p></p>
+</div>
+
+<div id="check">
+    <p></p>
+</div>
+<div>
+    <button onClick="add()">add</button>
+    <button onClick="del()">delete</button>
+</div>
+
+</body>
+
+</html>
