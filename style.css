@@ -1,0 +1,14 @@
+/*tag*/
+ div .td-tag-filter {
+     font: 14px/27px Arial, Helvetica, sans-serif;
+     height: 27px;
+     text-align: center;
+     margin-right: 1px;
+     background: #dedede;
+     color: #666;
+     float: left;
+     position: relative;
+     display: inline-block;
+     text-transform: uppercase;
+ }
+
