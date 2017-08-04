@@ -43,7 +43,7 @@ function tagList() {
     $tags=get_tags();
     //print_r($tags);
     for($i=0;$i<count($tags);$i++){
-        $list.= "<div class=\"td-pb-span4\"><a href='/isha/index.php/tag/".$tags[$i]->slug."'>".$tags[$i]->name."</a></div>";
+        $list.= "<div class=\"td-pb-span4\"><a href='/isha/index.php/tag/".$tags[$i]->slug."' target='_blank'>".$tags[$i]->name."</a></div>";
         $value=ucfirst($tags[$i]->name);
         $arr[$value[0]][]=str_replace('\'','',array($value,$tags[$i]->slug));
 
