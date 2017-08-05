@@ -1,24 +1,18 @@
 
 <html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <script>
-    var arr = new Array();
+
+    var arry={};
     var arr1 = new Array();
     var obj = new Object();
-    obj.name = "isha";
-    obj.phone = "9911307700";
-    obj.email = "isha@apnlive.com";
 
     var obj2 = new Object();
-    obj2.name = "isha2";
-    obj2.phone = "99113077";
-    obj2.email = "isha@apnlive.com2";
 
     var obj3 = new Object();
-    obj3.name = "isha3";
-    obj3.phone = "991130";
-    obj3.email = "isha@apnlive.com3";
+
     arr1.push(obj, obj2, obj3);
-    console.log(arr);
+
 
     function newCons(name, phone, email) {
         this.name = name;
@@ -26,50 +20,34 @@
         this.email= email;
     }
 
-    var con = new newCons('Red','0987654', 'isha@apnlive.com ');
-    var con2 = new newCons('abc','345678','ahs@com');
-    var con3 = new newCons('kijhy','222222','jkjkj@com');
-    arr.push(con, con2, con3);
-    console.log(arr);
-
     function add(){
+
         var c= '', r='', n='';
-        for(var i=0; i<arr1.length ; i++){
+        console.log('add');
+        for(var i=0; i<arr1.length; i++){
 
-            c += "<input type='text' value= "+arr[i].name+" /></br></br>";
+            c += "<div><input type='text' id=text"+i+" value='' /></div>";
+            r += "<div><input type='radio' id=radio"+i+" value=''/></div>";
+            n += "<div><input type='checkbox' id=check"+i+" value=''/></div>";
 
         }
-        for(var j=0; j<arr1.length ; j++){
 
-            r += "<input type='radio' value="+arr[j].phone+"/>"+arr[j].phone;
-        }
-
-        for(var k=0; k<arr1.length ; k++){
-
-            n += "<input type='checkbox' value="+arr[k].email+" />"+arr[k].email;
-        }
-      document.getElementById("textbox").innerHTML = c;
+        document.getElementById("textbox").innerHTML = c;
         document.getElementById("radio").innerHTML = r;
         document.getElementById("check").innerHTML = n;
-
     }
-/*
-    function add(text, radio, check){
-    this.text= "<input type='text' value= "+obj.name+" /></br></br>";
-    this.radio=  "<input type='radio' value="+obj.phone+"/>"+obj.phone;
-    this.check= "<input type='checkbox' value="+obj.email+" />"+obj.email;
 
-        document.getElementById("textbox").innerHTML = this.text;
-        document.getElementById("radio").innerHTML = this.radio;
-        document.getElementById("check").innerHTML = this.check;
+    function get(){
 
-    }*/
+       /* arr.pop();
+         add();
+         console.log(arr);*/
+        for(var x=0; x<arr1.length;x++){
 
-    function del(){
+            arry[x] = new newCons(document.getElementById("text"+x).value,document.getElementById("radio"+x).value, document.getElementById("check"+x).value);
+            console.log(arry);
 
-       arr.pop();
-       add();
-       console.log(arr);
+        }
 
     }
 
@@ -89,7 +67,7 @@
 </div>
 <div>
     <button onClick="add()">add</button>
-    <button onClick="del()">delete</button>
+    <button onClick="get()">delete</button>
 </div>
 
 </body>
