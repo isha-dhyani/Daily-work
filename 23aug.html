@@ -1,0 +1,29 @@
+<html>
+<script>
+    var obj = new Object();
+    var arr = new Array();
+    obj.name="isha";
+    obj.email = "abc@email.com";
+    obj.phone= "9911228844";
+    arr.push(obj.name,obj.email,obj.phone);
+    console.log(arr);
+function clickMe(){
+
+        var a='';
+        for (var i=0; i<arr.length;i++){
+            a+= "<input type='text' value="+arr[i]+" >";
+
+        }
+        document.getElementById("textbox").innerHTML = a ;
+
+    }
+</script>
+<body>
+<div id="textbox">
+
+</div>
+<div>
+    <button onClick="clickMe()">Click Me</button>
+</div>
+</body>
+</html>
