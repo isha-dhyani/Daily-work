@@ -14,10 +14,10 @@
     }
 
     function clickMe(){
-
+      
         var a='';
         for (var i=0; i<arr.length;i++){
-            a+= "<div><input type='text' value='' ></div>";
+            a+= "<div><input type='text' value=''></div>";
 
         }
         document.getElementById("textbox").innerHTML = a ;
@@ -25,17 +25,20 @@
     }
     function Add(){
         var simpleObj = new newCons("isha","abc@xyz.com","998877665");
-        newCons.prototype.class = function(){return "<div><input type='text' value='' ></div>"};
-        document.getElementById("textbox").innerHTML= simpleObj.class();
+        newCons.prototype.clas = function(){return "<div><input type='text' value='' ></div>"};
+        document.getElementById("text").innerHTML= simpleObj.clas();
 
     }
 </script>
-<body>
+<body onload="clickMe()">
 <div id="textbox">
 
 </div>
+<div id="text">
+
+</div>
 <div>
-    <button onClick="clickMe()">Click Me</button>
+
     <button onClick="Add()">Add</button>
 </div>
 </body>
