@@ -1,0 +1,65 @@
+<html>
+<script>
+var simpleObj ={};
+/*    var arr = new Array();
+    var obj = new Object();
+    var obj2 = new Object();
+    var obj3 = new Object();
+    arr.push(obj, obj2, obj3);*/
+
+    function newCons(name, phone, email) {
+        this.name = name;
+        this.phone= phone;
+        this.email= email;
+    }
+
+    function clickMe(){
+
+        var a='', b='', c='';
+
+            a += "<div><input type='text' id='name' value=''/></div>";
+            b += "<div><input type='text' id='phone' value=''/></div>";
+            c += "<div><input type='text' id='email' value=''/></div>";
+
+
+        document.getElementById("textbox").innerHTML = a ;
+        document.getElementById("textbox1").innerHTML = b ;
+        document.getElementById("textbox2").innerHTML = c ;
+
+
+    }
+    function Add(){
+        var simpleObj = new newCons();
+        newCons.prototype.clas = "<div><input type='text' id='cl' value='' /></div>";
+        document.getElementById("textt").innerHTML= simpleObj.clas;
+
+
+    }
+    function save(){
+        simpleObj = new newCons(document.getElementById("name").value,document.getElementById("phone").value, document.getElementById("email").value);
+        simpleObj.clas = document.getElementById("cl").value;
+        console.log(simpleObj);
+
+
+}
+</script>
+<body onload="clickMe()">
+<div id="textbox">
+
+</div>
+<div id="textbox1">
+
+</div>
+<div id="textbox2">
+
+</div>
+<div id="textt">
+
+</div>
+<div>
+
+    <button onClick="Add()">Add</button>
+    <button onClick="save()">save</button>
+</div>
+</body>
+</html>
