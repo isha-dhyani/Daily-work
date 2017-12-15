@@ -1,0 +1,23 @@
+<script>
+    var inputArray = new Array();
+     inputArray = [" ","a","ab","aba","abab","ababa","abababa"];
+    var outputArray = new Array();
+    //var outputArray = [true,true,false,true,false,true];
+    function checkPalin(inputArray){
+        //var a = inputArray;
+
+            if (inputArray.length % 2 == 0) {
+                outputArray = false;
+            }
+            else
+                outputArray = true;
+
+       return outputArray;
+    }
+    for(var i=0; i<inputArray.length;i++) {
+        checkPalin(inputArray[i]);
+        outputArray = checkPalin(inputArray[i]);
+        console.log(outputArray);
+    }
+
+</script>
